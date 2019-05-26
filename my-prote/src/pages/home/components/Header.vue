@@ -6,9 +6,11 @@
         <div class="header-input">
             <span class="iconfont">&#xe632;</span>
             输入城市景点</div>
+            <router-link to="/city">
         <div class="header-right">三亚
             <span class="iconfont icon-font">&#xe64a;</span>
         </div>
+        </router-link>
     </div>
 </template>
 <script>
