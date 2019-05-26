@@ -2,7 +2,7 @@
     <div>
         <div class="weed">周末去哪玩</div>
         <ul>
-                <li class="item border-bottom" v-for="item in weekedList">
+                <li class="item border-bottom" v-for="item in week">
                     <img :src="item.imgUrl" class="item-img">
                 <div class="item-info">
                     <p class="item-title">{{item.tit}}</p>
@@ -15,35 +15,12 @@
 <script>
 export default {
     name:'weeked',
+    props:{
+        week:Array
+    },
     data(){
         return{
-            weekedList:[{
-                id:'0001',
-                imgUrl:"http://img1.qunarzz.com/sight/source/1505/7d/df6ff468331c43.jpg_r_640x214_1f3783d0.jpg",
-                tit:"上海必打卡",
-                desc:"中西合璧，现代和传统各有各的精彩"
-            },
-            {
-                id:'0002',
-                imgUrl:"http://img1.qunarzz.com/sight/source/1505/7d/df6ff468331c43.jpg_r_640x214_1f3783d0.jpg",
-                tit:"上海必打卡",
-                desc:"中西合璧，现代和传统各有各的精彩"
-            }
-            ,
-            {
-                id:'0002',
-                imgUrl:"http://img1.qunarzz.com/sight/source/1505/7d/df6ff468331c43.jpg_r_640x214_1f3783d0.jpg",
-                tit:"上海必打卡",
-                desc:"中西合璧，现代和传统各有各的精彩"
-            },
-            {
-                id:'0002',
-                imgUrl:"http://img1.qunarzz.com/sight/source/1505/7d/df6ff468331c43.jpg_r_640x214_1f3783d0.jpg",
-                tit:"上海必打卡",
-                desc:"中西合璧，现代和传统各有各的精彩"
-            }
             
-            ]
         }
     }
 }

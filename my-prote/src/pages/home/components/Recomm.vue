@@ -2,7 +2,7 @@
 <div>
   <div class="recommend">热销推荐</div>
   <ul>
-      <li class="item border-bottom" v-for="item in recommList">
+      <li class="item border-bottom" v-for="item in recom">
               <img :src="item.imgUrl" class="item-img">
           <div class="item-info">
               <p class="item-title">{{item.tit}}</p>
@@ -16,38 +16,12 @@
 <script>
 export default {
     name:'recomm',
+    props:{
+        recom:Array
+    },
     data(){
         return{
-            recommList:[{
-                id:'0001',
-                imgUrl:"http://img1.qunarzz.com/sight/p0/1904/d5/d579b03a110d75a8a3.img.jpg_200x200_740bd4c0.jpg",
-                tit:"上海野生动物园",
-                desc:"54162条评论"
-            },{
-               id:'0002',
-                imgUrl:"http://img1.qunarzz.com/sight/p0/1904/d5/d579b03a110d75a8a3.img.jpg_200x200_740bd4c0.jpg",
-                tit:"上海野生动物",
-                desc:"54167条评论",
-            }
-            ,{
-               id:'0002',
-                imgUrl:"http://img1.qunarzz.com/sight/p0/1904/d5/d579b03a110d75a8a3.img.jpg_200x200_740bd4c0.jpg",
-                tit:"上海野生动物",
-                desc:"54167条评论",
-            }
-            ,{
-               id:'0002',
-                imgUrl:"http://img1.qunarzz.com/sight/p0/1904/d5/d579b03a110d75a8a3.img.jpg_200x200_740bd4c0.jpg",
-                tit:"上海野生动物",
-                desc:"54167条评论",
-            }
-            ,{
-               id:'0002',
-                imgUrl:"http://img1.qunarzz.com/sight/p0/1904/d5/d579b03a110d75a8a3.img.jpg_200x200_740bd4c0.jpg",
-                tit:"上海野生动物",
-                desc:"54167条评论",
-            }
-            ]
+        
         }
     }
 }

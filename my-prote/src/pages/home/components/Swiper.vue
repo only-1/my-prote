@@ -1,7 +1,7 @@
 <template>
-<div class="swiper-container" :options="swiperOption">
+<div class="swiper-container" :options="swiperOption" v-if="showSwiper">
     <div class="swiper-wrapper" >
-        <div class="swiper-slide" v-for="item in swiperList">
+        <div class="swiper-slide" v-for="item in list">
           <img :src="item.imgUrl">
         </div>
     </div>
@@ -12,19 +12,22 @@
 import Swiper from 'swiper';
 export default {
   name: 'Swiper',
+  props:{
+    list:Array
+  },
   data () {
     return {
       swiperOption:{
        pagination:'.swiper-pagination',
-      },
-      swiperList:[{
-        id:'001',
-        imgUrl:"http://img1.qunarzz.com/qs/1808/4d/077b11817a69b102.jpg"
-      },
-      {
-        id:'0002',
-        imgUrl:"http://img1.qunarzz.com/qs/1809/f6/18a4edd3d78d1102.jpg"
-      }]
+      }
+      // swiperList:[{
+      //   id:'001',
+      //   imgUrl:"http://img1.qunarzz.com/qs/1808/4d/077b11817a69b102.jpg"
+      // },
+      // {
+      //   id:'0002',
+      //   imgUrl:"http://img1.qunarzz.com/qs/1809/f6/18a4edd3d78d1102.jpg"
+      // }]
     }
   },
   mounted(){
@@ -33,6 +36,11 @@ export default {
     // 如果需要分页器
     pagination: '.swiper-pagination',
   })        
+  },
+  computed:{
+    showSwiper(){
+     return  this.list.length
+    }
   }
 }
 </script>
