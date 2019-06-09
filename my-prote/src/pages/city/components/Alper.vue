@@ -1,15 +1,36 @@
 <template>
     <ul class="list">
-        <li class="item">a</li>
-        <li class="item">a</li>
-        <li class="item">a</li>
-        <li class="item">a</li>
-        <li class="item">a</li>
+        <li class="item" v-for="(item,key) of letters" :key="item" :ref="key" @click="handletterClick" @touchstart="handleTouchStart">{{item}}</li>
     </ul>
 </template>
 <script>
 export default {
-    
+    name:'alper',
+    computed:{
+letters(){
+    const letters=[]
+    for(let i in this.city){
+
+    }
+}
+    },
+    data(){
+return{
+    touchStatus:false
+}
+    },
+    props:{
+        city:Object
+    },
+    methods:{
+        handletterClick(e){
+            this.$emit('change',e.target.innertext)
+            console.log(e.target.innertext)
+        },
+        handletterClick(e){
+            this.touchStatus=true
+        }       
+}
 }
 </script>
 <style lang="stylus" scoped>

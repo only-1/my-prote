@@ -1,6 +1,6 @@
 <template>
   
-        <div class="header">
+        <div class="header1">
             城市选择
            <router-link to='/'>
                 <div class="iconfont header-icon">&#xe624;</div>
@@ -14,7 +14,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.header
+.header1
     text-align:center
     height:.86rem
     line-height:0.86rem

@@ -1,9 +1,9 @@
 <template>
 <div>
     <city-header></city-header>
-    <city-search></city-search>
-    <city-list :city="cities" :hotcity=" hotCities"></city-list>
-    <city-alper></city-alper>
+    <city-search :city="cities"></city-search>
+    <city-list :city="cities" :hotcity=" hotCities" :letter="letter"></city-list>
+    <city-alper :city="cities" @change="handeChange"></city-alper>
 </div>
 </template>
 <script>
@@ -17,7 +17,8 @@ export default {
     data(){
         return{
             cities:{},
-            hotCities:[]
+            hotCities:[],
+            letter:''
         }
     },
     components:{
@@ -37,7 +38,11 @@ export default {
                 this.hotCities=res.data.hotCities
             }
             console.log(res)
+        },
+        handeChange(letter){
+           this.letter=letter
         }
+        
     },
     mounted(){
         this.getCityInfo()

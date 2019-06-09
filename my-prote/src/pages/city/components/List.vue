@@ -47,11 +47,19 @@ import Bscroll from 'better-scroll'
 export default {
     props:{
         city:Object,
-        hotcity:Array
+        hotcity:Array,
+        letter:String
     },
     name:'list',
     mounted(){
         this.scroll=new Bscroll(this.$refs.wrapper)
+    },
+    watch:{
+        letter(){
+           if(this.letter){
+               this.scroll.scrollToElement(this.$refs(this.letter)[0])
+           }
+        }
     }
 }
 </script>
